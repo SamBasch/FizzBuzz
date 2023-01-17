@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Name: A coding challenge</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/prism.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <header>
+           <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+               <div class="container-xxl">
+                   <a class="navbar-brand" href="#">
+                        <img src="/img/flavicon.svg" height="40" />AppMain
+                    </a>
+                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                       aria-label="Toggle navigation">
+                       <span class="navbar-toggler-icon-ms">
+                        <i class="bi bi-list"></i>
+                       </span>
+                   </button>
+                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                           <li class="nav-item">
+                               <a class="nav-link" href="/index.html">Home</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="/app.html">The App</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link active"  aria-current="page" href="/code.html">The Code</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#">The Repo</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#">About</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#">The Blog</a>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+           </nav>
+    </header>
+
+    <main class="content container">
+        <div class="row">
+            <h1 class="border-bottom border-2 border-dark-subtle" border->The Code</h1>
+            <!--Source code-->
+            <div class="col-12 col-lg-8">
+                <pre class="line-numbers">
+                    <code class="language-js">
+                        //get the user input from the page
+
+                        //controller function or entry point function (kicks off the whole process)
+                        function fetchUserInput() {
+                            //get values from page
+                        
+                        
+                            let startValue = document.getElementById('startValue').value;
+                        
+                            let endValue = document.getElementById('endValue').value;
+                        
+                            let fizz = document.getElementById('fizzValue').value;
+                        
+                            let buzz = document.getElementById('buzzValue').value;
+                        
+                        
+                        
+                        
+                            //parse our inputs as numbers
+                        
+                            startValue = parseInt(startValue);
+                            endValue = parseInt(endValue);
+                            fizz = parseInt(fizz);
+                            buzz = parseInt(buzz);
+                        
+                        
+                        
+                            //verify our inputs are actually numbers (validation)
+                        
+                            if (Number.isInteger(startValue) && Number.isInteger(endValue) && Number.isInteger(fizz) && Number.isInteger(buzz)) {
+                        
+                                let numbersArray = generateNumbers(startValue, endValue);
+                        
+                                displayNumbers(numbersArray, fizz, buzz);
+                        
+                        
+                            } else {
+                        
+                                Swal.fire(
+                                    {
+                                        icon: 'error',
+                                        title: 'Oops!',
+                                        text: 'Only integers are allowed for FizzBuzz!'
+                        
+                                    }
+                                );
+                        
+                        
+                            }
+                        
+                        
+                            //after validation generate our numbrs
+                            //display them on page
+                        
+                        
+                        
+                        }
+                        
+                        
+                        
+                        
+                        
+                        //generate our numbers
+                        
+                        function generateNumbers(start, end) {
+                        
+                            let numbers = [];
+                        
+                            for (let i = start; i <= end; i++) {
+                        
+                                numbers.push(i);
+                            }
+                        
+                            return numbers;
+                        
+                        
+                        
+                        }
+                        
+                        
+                        
+                        //display them on page
+                        
+                        //view funciton (function is dedicated to making it 'show up' on our web page)
+                        function displayNumbers(numbersArray, fizz, buzz) {
+                            let tableBody = document.getElementById('results');
+                        
+                        
+                        
+                            let tableHtml = "";
+                        
+                            for (let i = 0; i < numbersArray.length; i++) {
+                        
+                                let value = numbersArray[i];
+                                let className = '';
+                        
+                                if (value % fizz == 0 && value % buzz == 0) {
+                                    className = 'fizzbuzz'
+                                    value = 'FIZZBUZZ'
+                                    
+                                } else if (value % fizz == 0) {
+                                    className = 'fizz'
+                                    value = "FIZZ"
+                                } else if (value % buzz == 0) {
+                                    className= 'buzz'
+                                    value = 'BUZZ'
+                                } else {
+                                    
+                                }
+                        
+                        
+                                if (i % 5 == 0) {
+                                    tableHtml = tableHtml + '<tr>'
+                                }
+                        
+                                let tableRow = `<td class="${className}">${value}</td>`
+                        
+                                tableHtml = tableHtml + tableRow;
+                        
+                                if (i + 1 % 5 == 0) {
+                                    tableHtml = tableHtml + '</tr>'
+                                }
+                        
+                            }
+                        
+                            tableBody.innerHTML = tableHtml;
+                        
+                        }
+                        
+                    </code>
+                </pre>
+            </div>
+            <!--Code Description-->
+            <div class="col-12 col-lg-4">
+                <p>The code is structured in one function</p>
+                <h5><code>displayMessage()</code></h5>
+                <p>This function displays the message in a Sweet Alert</p>
+            </div>
+        </div>
+    </main>
+
+<footer class="container-fluid py-3">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-lg-3 align-items-center">
+            <div class="col text-center text-secondary text-lg-start order-last order-lg-first">
+                &copy; 2023 Sam Baschnagel
+            </div>
+            <div class="col text-center">
+                <img src="/img/WhiteLogoFullSVG.svg" height="55" />
+            </div>
+          <div class="col text-center text-lg-end">
+            <a href="#"><i class="bi bi-linkedin socialicons"></i></a>
+            <a href="#"><i class="bi bi-twitter socialicons"></i></a>
+            <a href="#"><i class="bi bi-youtube socialicons"></i></a>
+            <a href="#"><i class="bi bi-github socialicons"></i></a>
+          </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="/js/prism.js"></script>
+
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true
+        })
+    </script>
+
+</body>
+</html>

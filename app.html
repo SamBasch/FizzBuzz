@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz(wip): A coding challenge</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+            <div class="container-xxl">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/flavicon.svg" height="40" />AppMain
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon-ms">
+                        <i class="bi bi-list"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/app.html">The App</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/code.html">The Code</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/SamBasch/RangeFinderJS">The Repo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">The Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content container px-4 py-5 mt-5">
+        <div class="row row-cols-1 row-cols-md-2 gy-2 h-100">
+            <div class="col border-2 border-end">
+                <h1 class="fw-bold mb-3">FizzBuzz: A coding challenge</h1>
+                <h4>A javascript coding exercise using loops. Write a program
+                    that displays the numbers from 0 to 100, The user picks a two numbers. all numbers divisble by the first user selected number will be represented as <strong>'Fizz'</strong> and the numbers divisible by the second selected number will be represented as <strong>'Buzz'</strong>. Numbers divisible by both will be <strong>'FizzBuzz'</strong>.
+                </h4>
+                <h2 class="mt-5 border-2 border-bottom">Instructions</h2>
+                <p>Enter a starting value and an ending value. Press the button and the values will appear.</p>
+            </div>
+            <div class="col">
+                <form action="#" class="row gy-2 gx-3">
+                    <div class="col">
+                        <label>Fizz Value</label>
+                        <input id="fizzValue" type="number" class="form-control" placeholder="Fizz Value"
+                            aria-label="Fizz Value" value="3" />
+                    </div>
+                    <div class="col">
+                        <label>Buzz Value</label>
+                        <input id="buzzValue" type="number" class="form-control" placeholder="Buzz Value"
+                            aria-label="Buzz Value" value="5" />
+                    </div>
+                    <div class="col">
+                        <label>Starting Number</label>
+                        <input id="startValue" type="number" class="form-control" placeholder="Starting Value"
+                            aria-label="Starting Value" value="0" />
+                    </div>
+                    <div class="col">
+                        <label>Ending Number</label>
+                        <input id="endValue" type="number" class="form-control" placeholder="End Value"
+                            aria-label="End Value" value="100" />
+                    </div>
+                    <div class="col-12 d-flex justify-content-end">
+                        <button class="btn btn-dark btn-lg" id="btnSubmit" type="button">Go</button>
+                    </div>
+                </form>
+                <h2 class="mt-5 border-bottom border-2">Results</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <tbody id="results">
+                            <!--FizzBuzz table goes here-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="container-fluid py-3">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-lg-3 align-items-center">
+                <div class="col text-center text-secondary text-lg-start order-last order-lg-first">
+                    &copy; 2023 Sam Baschnagel
+                </div>
+                <div class="col text-center">
+                    <img src="/img/WhiteLogoFullSVG.svg" height="55" />
+                </div>
+                <div class="col text-center text-lg-end">
+                    <a href="#"><i class="bi bi-linkedin socialicons"></i></a>
+                    <a href="#"><i class="bi bi-twitter socialicons"></i></a>
+                    <a href="#"><i class="bi bi-youtube socialicons"></i></a>
+                    <a href="#"><i class="bi bi-github socialicons"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="/js/site.js"></script>
+    <script>
+        document.getElementById('btnSubmit').addEventListener('click', fetchUserInput);
+    </script>
+
+</body>
+
+</html>
