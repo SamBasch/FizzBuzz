@@ -104,10 +104,7 @@ function displayNumbers(numbersArray, fizz, buzz) {
         } else if (value % buzz == 0) {
             className= 'buzz'
             value = 'BUZZ'
-        } else {
-            
         }
-
 
         if (i % 5 == 0) {
             tableHtml = tableHtml + '<tr>'

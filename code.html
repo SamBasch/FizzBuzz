@@ -192,9 +192,15 @@
             </div>
             <!--Code Description-->
             <div class="col-12 col-lg-4">
-                <p>The code is structured in one function</p>
-                <h5><code>displayMessage()</code></h5>
-                <p>This function displays the message in a Sweet Alert</p>
+                <p>The code is structured in 3 functions</p>
+                <h5><code>fetchUserInput()</code></h5>
+                <p>This function takes in the user inputs that set that value for fizz, buzz, as well as the startind and ending value of the number range they would like to check through. This function then parses are the values input from the user by using 'parseInt()'. The parsed numbers are then assigned to a variable with their respective name.</p>
+                <p>The function then performs a validation check on the parsed inputs to make sure they were able to be parsed as integers. This is down via an 'if statement' If any of the inputs dont pass the validation check you will be greeted with a sweet alert. If the validation check passes the program continues by calling the 'generateNumbers()' function.</p>
+                <h5><code>generateNumbers()</code></h5>
+                <p>This function simply creates and an array of numbers. The range/size/length of the array is determined by the 'starting and ending value' of the users input the array is then retruned to the line that called the this function back in the controller function.</p>
+                <h5><code>displayNumbers()</code></h5>
+                <p>This function is passes the parameters of the generated numbers array, and the user input value for 'fizz' and 'buzz' using a for loop the array of numbers is iterated through and with every iteration the current number of the array is check with modulo to see if it divisible by the 'fizz' or 'buzz' value. Via and if else/if statement...the current number is FIRST checked to see if it is divisible by BOTH the 'fizz' and 'buzz' values. (this has to be done first because if it is found to by divisible by just 'fizz' or 'buzz' first the if statement would end and you would never be able to see if it was divisible by both). whether the number is divisible both or just 'fizz' or just 'buzz' it will be given the respective class name that will change its appearance via CSS. More importantly its value will be assigned to the string 'fizzbuzz', 'fizz', or 'buzz' so that the string template literal displays it as those words instead of the actual number.</p>
+
             </div>
         </div>
     </main>
